@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#2979FF</color> <!-- Blue -->
+    <color name="colorPrimaryDark">#2962FF</color> <!-- Slightly Darker Blue -->
+    <color name="colorAccent">#00BCD4</color> <!-- Aqua Marine -->
+    <color name="colorSilver">#C0C0C0</color> <!-- Silver -->
+    <color name="colorWhite">#FFFFFF</color> <!-- White -->
+</resources>
