@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- res/layout/item_details_layout.xml -->
+<?xml version="1.0" encoding="utf-8"?><!-- res/layout/item_details_layout.xml -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/shape2"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -12,90 +11,105 @@
         android:id="@+id/symbolTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Symbol:" />
+        android:text="Symbol:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/identifierTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Identifier:" />
+        android:text="Identifier:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/openTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open:" />
+        android:text="Open:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/dayHighTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Day High:" />
+        android:text="Day High:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/dayLowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Day Low:" />
+        android:text="Day Low:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/lastPriceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Last Price:" />
+        android:text="Last Price:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/previousCloseTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Previous Close:" />
+        android:text="Previous Close:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/changeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change:" />
+        android:text="Change:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/pChangeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="P Change:" />
+        android:text="P Change:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/yearHighTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Year High:" />
+        android:text="Year High:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/yearLowTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Year Low:" />
+        android:text="Year Low:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/totalTradedVolumeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Traded Volume:" />
+        android:text="Total Traded Volume:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/totalTradedValueTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Traded Value:" />
+        android:text="Total Traded Value:"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/perChange365dTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Per Change (365d):" />
+        android:text="Per Change (365d):"
+        android:textColor="@color/colorWhite" />
 
     <TextView
         android:id="@+id/perChange30dTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Per Change (30d):" />
+        android:text="Per Change (30d):"
+        android:textColor="@color/colorWhite" />
 
 </LinearLayout>

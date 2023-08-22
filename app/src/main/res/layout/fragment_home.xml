@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.HomeFragment"
     android:orientation="vertical">
     <androidx.core.widget.NestedScrollView
@@ -12,18 +13,31 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:nestedScrollingEnabled="false">
 
-            <!-- GridView for IndicesView -->
-            <GridView
+                <TextView
+                    android:id="@+id/tickerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ticker text"
+                    android:textSize="18sp" />
+            </HorizontalScrollView>
+
+
+            <!-- Recyclerview for IndicesView -->
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/indicesview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="auto_fit"
-                android:columnWidth="100dp"
-                android:horizontalSpacing="8dp"
-                android:verticalSpacing="8dp"
-                android:gravity="center"
-                android:layout_marginTop="16dp"/>
+                android:padding="8dp"
+                android:layout_below="@id/horizontalScrollView"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"/>
 
             <!-- RecyclerView for PortfolioView -->
             <androidx.recyclerview.widget.RecyclerView

@@ -2,6 +2,7 @@ package com.nilesh.stocktrading.fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nilesh.stocktrading.DataFetcher;
+import com.nilesh.stocktrading.Item;
 import com.nilesh.stocktrading.ItemAdapter;
 import com.nilesh.stocktrading.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +28,9 @@ public class MarketWatchFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
+
+    private List<Item> allItems;
+    private SearchView searchView;
 
 
     public MarketWatchFragment() {
@@ -61,6 +67,21 @@ public class MarketWatchFragment extends Fragment {
 
         itemAdapter = new ItemAdapter(new ArrayList<>()); // Initialize the adapter
         recyclerView.setAdapter(itemAdapter);
+        searchView = v.findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filterItems(newText);
+                return true;
+            }
+        });
+
+        allItems = new ArrayList<>();
 
         fetchData();
 
@@ -70,10 +91,20 @@ public class MarketWatchFragment extends Fragment {
         DataFetcher dataFetcher = new DataFetcher(requireContext());
         dataFetcher.fetchItems(
                 itemList -> {
+                    allItems = itemList;
                     itemAdapter.setItems(itemList); // Update adapter data
                 },
                 error -> {
                     // Handle error
                 });
+    }
+    private void filterItems(String query) {
+        List<Item> filteredItems = new ArrayList<>();
+        for (Item item : allItems) {
+            if (item.getSymbol().toLowerCase().contains(query.toLowerCase())) {
+                filteredItems.add(item);
+            }
+        }
+        itemAdapter.setItems(filteredItems);
     }
 }
